@@ -2,12 +2,12 @@
 Knut-Moris-Pratt algorithm
 """
 from time import time
+from pathlib import Path
 import matplotlib.pyplot as plt
 from numba import njit
 
 
 def get_substr_idx_1(substring: str, string: str) -> int:
-    substring_size = len(substring)
     s = substring + "#" + string
     p = [0] * len(s)
     for i in range(1, len(s)):
@@ -65,7 +65,7 @@ _ = get_substr_idx_3("start", "warmupstart")
 
 
 class Test:
-    def test(self, tests_filepath: str = "hw1/tests.txt"):
+    def test(self, tests_filepath: Path = Path(__file__).parent / "tests.txt"):
         # read tests file
         with open(tests_filepath, "r") as f:
             lines = f.readlines()[1:]
