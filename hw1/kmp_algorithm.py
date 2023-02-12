@@ -5,6 +5,7 @@ from time import time
 from pathlib import Path
 import matplotlib.pyplot as plt
 from numba import njit
+from kmp_cython import kmp_cython
 
 
 def get_substr_idx_1(substring: str, string: str) -> int:
@@ -93,7 +94,7 @@ class Test:
             t_mean = 0
             for i in range(10):
                 t = time()
-                _ = get_substr_idx_3(substring, string)
+                _ = kmp_cython(substring, string)
                 t_mean += (time() - t) / 10
             time3.append(t_mean)
 
@@ -101,7 +102,7 @@ class Test:
         plt.title("Time comparison")
         plt.plot(range(len(lines)), time1, label="naive KMP")
         plt.plot(range(len(lines)), time2, label="KMP with some improvments")
-        plt.plot(range(len(lines)), time3, label="KMP with some improvments + numba")
+        plt.plot(range(len(lines)), time3, label="KMP with some improvments + cython")
         plt.legend()
         plt.ylabel("Time (sec)")
         plt.xlabel("Test number")
