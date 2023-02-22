@@ -1,0 +1,3 @@
+[submodule "hw2_evolve_framework/watchmaker"]
+	path = hw2_evolve_framework/watchmaker
+	url = git@github.com:dwdyer/watchmaker.git
