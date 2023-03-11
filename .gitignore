@@ -127,3 +127,17 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# for hw3
+target
+.idea/
+*.iml
+*.log
+*.tsv
+*.lck
+*.png
+*.out
+*.orig
+exp.props
+__pycache__
+.ipynb_checkpoints
