@@ -12,7 +12,7 @@ public class MyMutation implements EvolutionaryOperator<double[]> {
 
         // your implementation:
         double mutationThreshold = 0.5;
-        double sigma = 0.8;
+        double sigma = 0.5;
         int numIndividuals = population.size();
         for (int i = 0; i < numIndividuals; i++) {
             double[] individual = population.get(i);
@@ -27,7 +27,7 @@ public class MyMutation implements EvolutionaryOperator<double[]> {
     public static double[] gaussianMutation(double[] individual, Random random, double mutationThreshold, double sigma) {
         int numGenes = individual.length;
         double[] mutatedIndividual = new double[numGenes];
-        int maxMutations = (int) (0.4 * numGenes);
+        int maxMutations = (int) (0.5 * numGenes);
         int cntMutations = 0;
         for (int i = 0; i < numGenes; i++) {
             if ((cntMutations < maxMutations) & (random.nextDouble() < mutationThreshold)) {

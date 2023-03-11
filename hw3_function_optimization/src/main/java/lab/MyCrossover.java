@@ -27,7 +27,7 @@ public class MyCrossover extends AbstractCrossover<double[]> {
     }
     public static double[] simpleCrossover(double[] parent1, double[] parent2, double alpha, Random random) {
         double[] child = new double[parent1.length];
-        double threshold = 0.4;
+        double threshold = 0.5;
         for (int i = 0; i < parent1.length; i++) {
             if (random.nextDouble() < threshold) {
                 // cross parents
