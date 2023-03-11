@@ -3,6 +3,7 @@ package lab;
 import org.uncommons.watchmaker.framework.*;
 import org.uncommons.watchmaker.framework.operators.EvolutionPipeline;
 import org.uncommons.watchmaker.framework.selection.RouletteWheelSelection;
+import org.uncommons.watchmaker.framework.selection.RankSelection;
 import org.uncommons.watchmaker.framework.termination.GenerationCount;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class MyAlg {
         operators.add(new MyMutation()); // Mutation
         EvolutionPipeline<double[]> pipeline = new EvolutionPipeline<double[]>(operators);
 
-        SelectionStrategy<Object> selection = new RouletteWheelSelection(); // Selection operator
+        SelectionStrategy<Object> selection = new RankSelection(); // Selection operator
 
         FitnessEvaluator<double[]> evaluator = new FitnessFunction(dimension); // Fitness function
 
